@@ -1,4 +1,4 @@
-# Huffman-Shannon_fano
+# Experimental verification of Huffman and Shanon fano code
 # Aim:
 Consider a discrete memoryless source with symbols and statistics {0.125, 0.0625, 0.25, 0.0625, 0.125, 0.125, 0.25} for its output. 
 Apply the Huffman and Shannon-Fano to this source. 
@@ -6,6 +6,10 @@ Show that by drawing the tree diagram, and
 Calculate the average code word length, entropy, variance, redundancy, and efficiency.
 # Tools Required:
 Google Colab
+# Theory 
+
+Huffman and Shannon–Fano coding are lossless data compression techniques used to efficiently represent symbols from a discrete memoryless source based on their probabilities. In Shannon–Fano coding, symbols are arranged in descending order and recursively divided into two groups with nearly equal probabilities, assigning binary digits to form prefix codes. Huffman coding, on the other hand, is an optimal bottom-up approach where the least probable symbols are repeatedly combined to form a binary tree, resulting in minimum average codeword length. The performance of these methods is evaluated using entropy, average codeword length, efficiency, redundancy, and variance, with Huffman coding generally providing better efficiency and lower redundancy compared to Shannon–Fano coding.
+
 # Program:
 ```
 Experimental verification of Huffman and Shanon fano code                                                                                                 # Huffman Coding and Shannon-Fano Coding for given source probabilities
@@ -14,11 +18,9 @@ Experimental verification of Huffman and Shanon fano code                       
 import math
 import heapq
 from collections import defaultdict
-
 # --------------------------------------------------
 # GIVEN SOURCE PROBABILITIES
 # --------------------------------------------------
-
 symbols = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7']
 probabilities = [0.125, 0.0625, 0.25, 0.0625, 0.125, 0.125, 0.25]
 
@@ -27,7 +29,6 @@ print("-" * 40)
 for s, p in zip(symbols, probabilities):
     print(f"{s} : {p}")
 print()
-
 # --------------------------------------------------
 # ENTROPY CALCULATION
 # --------------------------------------------------
@@ -95,8 +96,6 @@ print("-" * 40)
 for s in symbols:
     print(f"{s} : {huffman_codes[s]}")
 print()
-
-
 # --------------------------------------------------
 # SHANNON-FANO CODING
 # --------------------------------------------------
@@ -133,8 +132,6 @@ def shannon_fano(symbol_prob_list, code_dict={}):
         shannon_fano(right, code_dict)
 
     return code_dict
-
-
 sorted_pairs = sorted(zip(symbols, probabilities), key=lambda x: x[1], reverse=True)
 
 sf_codes = defaultdict(str)
@@ -145,8 +142,6 @@ print("-" * 40)
 for s, _ in sorted_pairs:
     print(f"{s} : {sf_codes[s]}")
 print()
-
-
 # --------------------------------------------------
 # PERFORMANCE METRICS
 # --------------------------------------------------
@@ -208,11 +203,13 @@ print("\nComparison Complete.")
 print("=" * 60) 
 ```
 # Calculation:
-```
-Compare the manually calculated value and the observed practical value.
-```
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/b23fcc3c-98f9-46d1-9eb8-ae14d3cedfcb" />
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/7d3ddfa8-eac8-42e5-a9ee-bfe6ec591c75" />
+
 # Output
-```Symbols and Probabilities
+```
+
+Symbols and Probabilities
 ----------------------------------------
 S1 : 0.125
 S2 : 0.0625
