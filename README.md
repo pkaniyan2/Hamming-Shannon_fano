@@ -203,8 +203,9 @@ print("\nComparison Complete.")
 print("=" * 60) 
 ```
 # Calculation:
-<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/b23fcc3c-98f9-46d1-9eb8-ae14d3cedfcb" />
-<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/7d3ddfa8-eac8-42e5-a9ee-bfe6ec591c75" />
+<img width="902" height="1600" alt="image" src="https://github.com/user-attachments/assets/f056f1af-5a59-40c1-8399-15ce8b0c75f0" />
+<img width="902" height="1600" alt="image" src="https://github.com/user-attachments/assets/03f976f5-2697-47b9-8130-9ef8c13f89bf" />
+
 
 # Output
 ```
